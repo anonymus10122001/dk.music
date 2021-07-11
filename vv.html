@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vv.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<script src="vv.js"></script>
+<body>
+    <div class="main">
+
+        <form action="" method="POST" class="form" id="form-1">
+          <h3 class="heading">Sign up</h3>
+          <div class="spacer"></div>
+  
+          <div class="form-group">
+            <label for="fullname" class="form-label">Full Name</label>
+            <input id="fullname" name="fullname" type="text" placeholder="VD: Văn Huy" class="form-control">
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="form-label">User name</label>
+            <input id="username" name="username" type="text" placeholder="VD: vanhuy123" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="text" placeholder="VD: huy48380@gmail.com" class="form-control">
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="country" id="country" class="form-label">Country</label>
+            <select name="country" id="country" class="form-control">
+                <option value="">----- Chọn -----</option>   
+                <option value="vn">Việt Nam</option>
+                <option value="nb">Japan</option>
+                <option value="tt">Korea</option>
+            </select>
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="number" class="form-label">Number phone</label>
+            <input id="number" name="number" type="text" placeholder="Enter number" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter Password" class="form-control">
+            <span class="form-message"></span>
+          </div>
+  
+          <div class="form-group">
+            <label for="password_confirmation" class="form-label">Password</label>
+            <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+            <span class="form-message"></span>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" name="checkbox" class="checkbox">
+            <h2 class="chek"> Chấp nhận <a href="#"> điều khoản </a> của chúng tôi</h2>
+          </div>
+  
+          <button class="form-submit">Submit</button>
+        </form>
+      </div>
+
+      <script>
+  
+        document.addEventListener('DOMContentLoaded', function () {
+          // Mong muốn của chúng ta
+          Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+              Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+              Validator.isUsername('#username', 'Vui lòng nhập user name'),
+              Validator.isEmail('#email'),
+              Validator.isCountry('#country'),
+              Validator.isNumber('#number'),
+              Validator.minLength('#password', 6),
+              Validator.isRequired('#password_confirmation'),
+              Validator.isConfirmed('#password_confirmation', function () {
+                return document.querySelector('#form-1 #password').value;
+              }, 'Mật khẩu nhập lại không chính xác')
+            ],
+            onSubmit: function (data) {
+              // Call API
+              console.log(data);
+            }
+          });
+        });
+  
+      </script>
+</body>
+</html>

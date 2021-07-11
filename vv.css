@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: url("nao1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+.main {
+    left: 70%;
+    position: absolute;
+    background: #ffee00;
+    padding: 5px 50px;
+    max-width: 900px;
+    border-radius: 10px;
+}
+.form {
+    width: 360px;
+    min-height: 100px;
+    padding: 32px 24px;
+    border-radius: 2px;
+    margin: 24px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51,62,73,.1);
+}
+.form .heading {
+    font-size: 3em;
+    font-weight: 700;
+    color: #180a57;
+    text-align: center;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.form .desc {
+    text-align: center;
+    color: #636d77;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.form-check{
+    font-size: 10px;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.chek{
+    padding: 0px 10px;
+}
+.checkbox h2{
+    width: 10%;
+}
+.chek a{
+    width: 70%;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+    background-color: #F2F3F5;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.form-control:hover {
+    border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.9rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+.form-submit {
+    margin-left: 25%;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 10px 0 rgba(255, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+.form-submit:hover {
+    background-color: #1ac7b6;
+}
+
+.spacer {
+    margin-top: 36px;
+}
